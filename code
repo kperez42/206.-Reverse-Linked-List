@@ -1,18 +1,43 @@
+/*
+    Name: Kevin Daniel Perez Ramirez
+    Date: July 15, 2025
+    LeetCode Problem 206 - Reverse Linked List
+    Description:
+        This function takes the head of a singly linked list and reverses it in-place.
+        It returns the new head of the reversed list using an iterative method.
+
+        Example:
+            Input:  1 -> 2 -> 3 -> 4 -> 5 -> nullptr
+            Output: 5 -> 4 -> 3 -> 2 -> 1 -> nullptr
+*/
+
 class Solution {
 public:
+    // Main function to reverse a singly linked list
     ListNode* reverseList(ListNode* head) {
+        // 'prev' will keep track of the previous node.
+        // Initially it's null because the new tail's next should be null.
         ListNode* prev = nullptr;
+
+        // 'curr' will point to the current node we are visiting.
         ListNode* curr = head;
 
+        // Loop until we reach the end of the original list (nullptr)
         while (curr != nullptr) {
+            // Save the next node before changing any pointers
             ListNode* nextTemp = curr->next;
+
+            // Reverse the pointer: make current node point to the previous node
             curr->next = prev;
+
+            // Move 'prev' forward: it becomes the current node
             prev = curr;
+
+            // Move 'curr' forward: it becomes the next node in the original list
             curr = nextTemp;
         }
 
+        // After the loop ends, 'prev' is the new head of the reversed list
         return prev;
     }
 };
-
-
