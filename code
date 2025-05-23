@@ -1,6 +1,6 @@
 /*
     Name: Kevin Daniel Perez Ramirez
-    Date: July 15, 2025
+    Date: May 23, 2025
     LeetCode Problem 206 - Reverse Linked List
     Description:
         This function takes the head of a singly linked list and reverses it in-place.
